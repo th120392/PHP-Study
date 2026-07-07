@@ -9,3 +9,17 @@
 // 出力例 「johnの評価は良です」
 
 $scores = array("John" => 85, "Jane" => 92, "Jim" => 78);
+
+foreach ($scores as $name => $score) {
+    if ($score >= 90) {
+        $grade = "優";
+    } elseif ($score >= 80) {
+        $grade = "良";
+    } elseif ($score >= 70) {
+        $grade = "可";
+    } else {
+        $grade = "不可";
+    }
+
+    echo $name . "の評価は" . $grade . "です\n";
+}
