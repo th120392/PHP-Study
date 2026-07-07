@@ -9,5 +9,5 @@ function multiply(int $a, int $b): int {
 }
 
 // TODO: 以下のコードを修正してエラーを解消しなさい
-$result = multiply("3", "4");
+$result = multiply(3, 4);
 echo "結果: " . $result . "\n";

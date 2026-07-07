@@ -24,7 +24,7 @@ if (isAllPositive(array(0)) === false) {
 // ↑確認用コード↑(編集しないこと)
 
 // TODO: 引数と戻り値に型を付けて完成させなさい
-function isAllPositive($numbers) {
+function isAllPositive(array $numbers): bool {
     foreach ($numbers as $num) {
         if ($num <= 0) {
             return false;
