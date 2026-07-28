@@ -61,10 +61,9 @@ class User {
     }
 
     // 問題3
-    function getOlder(): void {
-            if ($this->age < 150) {
-        $this->age++;
-    }
-
+     function getOlder(): void {
+        if ($this->age < 150) {
+            $this->age++;
+        }
     }
 }

@@ -8,11 +8,17 @@ class Gun {
     private $maxMagazine;
     // 残弾
     private $currentMagazine;
+
+    private $defaultMagazine = 0;
     // ↑フィールド============================
 
     // コンストラクタ
     function __construct($name, $maxMagazine) {
         // 問題1
+        $this->name = $name;
+        $this->maxMagazine = $maxMagazine;
+        $this->defaultMagazine = $maxMagazine;
+        $this->currentMagazine = 0;
     }
 
     // 現在の状態を表示
@@ -27,20 +33,50 @@ class Gun {
     // リロード
     function reload() {
         // 問題2
+   if ($this->currentMagazine == $this->maxMagazine) {
+        echo "リロードの必要はありません\n";
+    } else {
+        $this->currentMagazine = $this->maxMagazine;
+    }
     }
 
     // 発砲
     function fire() {
-        // 問題3
+
+    if ($this->currentMagazine == 0) {
+        echo "リロードしてください\n";
+        return;
     }
 
+    $this->currentMagazine--;
+
+    echo $this->name . "を発砲しました。残弾: " . $this->currentMagazine . "発\n";
+
+    if ($this->currentMagazine == 0) {
+        echo "リロードしてください\n";
+    }
+}
     // 拡張マガジンを装着
-    function setExtendedMagazine() {
-        // 問題4
-    }
+    function setExtendedMagazine($bullet) {
+     if (!is_int($bullet)|| bullet <= 0)
+        echo "因数が不正です\n";
+        return;
+    
 
+    $this->extendedMagazine = $bullet;
+    $this->maxmagazine += $bullet;
+}
     // 拡張マガジンを取外し
     function unsetExtendedMagazine() {
-        // 問題4
+     if($this->extendedmagazine == 0){
+        echo "拡張マガジンは装着されていません\n";
+        return;
+     }
+     $this->maxmagazine -= $this->setExtendedMagazine;
+     $this->extendedMagazine = 0;
+
+     if ($this->currentmagazine > $this->maxmagazine){
+        $this->reload();
+     }
     }
 }

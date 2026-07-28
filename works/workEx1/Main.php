@@ -3,9 +3,22 @@
 // Userクラスの読み込み
 require 'Gun.php';
 
-$mainWeapon = new Gun("AK47",30);
-$subWeapon = new Gun("Mosin-Nagant",5);
+$mainWeapon = new Gun("AK47",29);
 
 // 現在の状態を表示
 $mainWeapon->echoStatus();
-$subWeapon->echoStatus();
+
+$mainWeapon->reload();
+$mainWeapon->echoStatus();
+
+$mainWeapon->fire();
+$mainWeapon->fire();
+$mainWeapon->fire();
+$mainWeapon->fire();
+
+$mainWeapon->setextendedmagazine(10);
+$mainWeapon->reload();
+$mainWeapon->echoStatus();
+
+$mainWeapon->unsetextendednagazine();
+$mainWeapon->echoStatus();
