@@ -11,8 +11,6 @@ $students = array(
     array("name" => "伊藤", "scores" => array(70, 75, 65)),
 );
 
-// TODO: ここから下で各関数を実行
-
 // 全生徒の情報を表示
 echo "=== 全生徒 ===\n";
 displayStudents($students);
