@@ -57,25 +57,25 @@ class Gun {
     }
 }
     // 拡張マガジンを装着
-    function setExtendedMagazine($bullet) {
-     if (!is_int($bullet)|| bullet <= 0)
+    function ExtendedMagazine($bullet) {
+     if (!is_int($bullet)|| bullet <= 0) {
         echo "因数が不正です\n";
         return;
-    
+     }
 
     $this->extendedMagazine = $bullet;
-    $this->maxmagazine += $bullet;
+    $this->maxMagazine += $bullet;
 }
     // 拡張マガジンを取外し
     function unsetExtendedMagazine() {
-     if($this->extendedmagazine == 0){
+     if($this->extendedMagazine == 0){
         echo "拡張マガジンは装着されていません\n";
         return;
      }
-     $this->maxmagazine -= $this->setExtendedMagazine;
+     $this->maxMagazine -= $this->extendedMagazine;
      $this->extendedMagazine = 0;
 
-     if ($this->currentmagazine > $this->maxmagazine){
+     if ($this->currentMagazine > $this->maxMagazine){
         $this->reload();
      }
     }
